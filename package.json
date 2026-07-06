@@ -4,18 +4,20 @@
   "description": "opencode plugin starter — scaffold a new opencode plugin project via `npx ocps init`",
   "type": "module",
   "bin": {
-    "ocps": "./src/cli.ts"
+    "ocps": "./dist/cli.js"
   },
   "publishConfig": {
     "access": "public"
   },
-  "exports": "./src/index.ts",
+  "exports": "./dist/index.js",
   "files": [
-    "src",
+    "dist",
     "templates",
     "README.md"
   ],
   "scripts": {
+    "build": "bun build ./src/cli.ts ./src/index.ts --outdir ./dist --target node",
+    "prepublishOnly": "bun run build",
     "test": "bun test",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

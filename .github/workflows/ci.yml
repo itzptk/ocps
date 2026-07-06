@@ -26,10 +26,13 @@ jobs:
       - name: Test
         run: bun test
 
+      - name: Build
+        run: bun run build
+
       - name: Scaffold smoke test
         run: |
           mkdir -p /tmp/smoke
-          bun run src/cli.ts init /tmp/smoke/opencode-demo --name opencode-demo --no-install
+          node ./dist/cli.js init /tmp/smoke/opencode-demo --name opencode-demo --no-install
           test -f /tmp/smoke/opencode-demo/src/index.ts
           test -f /tmp/smoke/opencode-demo/package.json
           grep -q '"opencode-demo"' /tmp/smoke/opencode-demo/package.json
