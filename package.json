@@ -1,10 +1,13 @@
 {
-  "name": "ocps",
+  "name": "@itzptk/ocps",
   "version": "1.0.0",
   "description": "opencode plugin starter — scaffold a new opencode plugin project via `npx ocps init`",
   "type": "module",
   "bin": {
     "ocps": "./src/cli.ts"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "exports": "./src/index.ts",
   "files": [
