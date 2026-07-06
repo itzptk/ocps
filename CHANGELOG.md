@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/itzptk/ocps/compare/v1.0.0...v1.0.1) (2026-07-06)
+
+
+### Bug Fixes
+
+* build to dist for node compatibility without type stripping ([2718e7e](https://github.com/itzptk/ocps/commit/2718e7e52505e360069c0507120f8465772e3ccb))
+
 ## 1.0.0 (2026-07-06)
 
 
