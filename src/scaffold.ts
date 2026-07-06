@@ -68,6 +68,7 @@ export function scaffold(
 
   const vars: TemplateVars = {
     name: parsed.raw,
+    binName: parsed.local,
     exportName,
     description,
     year,

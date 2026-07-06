@@ -3,6 +3,7 @@ import { join, relative, sep } from "node:path";
 
 export type TemplateVars = {
   name: string;
+  binName: string;
   exportName: string;
   description: string;
   year: string;
@@ -15,6 +16,7 @@ const PLACEHOLDER_RE = /\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g;
 export function render(content: string, vars: TemplateVars): string {
   return content.replace(PLACEHOLDER_RE, (match, key: string) => {
     if (key === "name") return vars.name;
+    if (key === "binName") return vars.binName;
     if (key === "exportName") return vars.exportName;
     if (key === "description") return vars.description;
     if (key === "year") return vars.year;

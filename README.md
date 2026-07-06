@@ -47,6 +47,8 @@ opencode-greeter/
   README.md
   LICENSE
   src/
+    cli.ts          # setup CLI for opencode.json
+    cli.test.ts     # setup CLI JSONC test
     index.ts        # plugin entry exporting the hook function
     index.test.ts   # initialization + hook test
   .github/workflows/
@@ -59,6 +61,8 @@ The generated `src/index.ts` exports a typed opencode plugin that:
 - logs to `client.app.log` on load,
 - subscribes to `session.idle` events,
 - and short-circuits when `enabled: false`.
+
+The generated package also exposes an `opencode-greeter` CLI that adds the plugin to `~/.config/opencode/opencode.json`.
 
 Register the published plugin in `opencode.json`:
 

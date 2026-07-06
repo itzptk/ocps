@@ -30,6 +30,8 @@ test("scaffold creates expected files with rendered names", () => {
 
   expect(existsSync(join(tmp, "package.json"))).toBe(true);
   expect(existsSync(join(tmp, "src/index.ts"))).toBe(true);
+  expect(existsSync(join(tmp, "src/cli.ts"))).toBe(true);
+  expect(existsSync(join(tmp, "src/cli.test.ts"))).toBe(true);
   expect(existsSync(join(tmp, "src/index.test.ts"))).toBe(true);
   expect(existsSync(join(tmp, "README.md"))).toBe(true);
   expect(existsSync(join(tmp, "tsconfig.json"))).toBe(true);
@@ -41,10 +43,17 @@ test("scaffold creates expected files with rendered names", () => {
   const pkg = JSON.parse(readFileSync(join(tmp, "package.json"), "utf-8"));
   expect(pkg.name).toBe("opencode-greeter");
   expect(pkg.description).toBe("A greeter");
+  expect(pkg.bin).toEqual({ "opencode-greeter": "src/cli.ts" });
+  expect(pkg.dependencies["jsonc-parser"]).toBeDefined();
 
   const idx = readFileSync(join(tmp, "src/index.ts"), "utf-8");
   expect(idx).toContain("OpencodeGreeterPlugin");
   expect(idx).not.toContain("{{");
+
+  const cli = readFileSync(join(tmp, "src/cli.ts"), "utf-8");
+  expect(cli).toContain("#!/usr/bin/env bun");
+  expect(cli).toContain('const PLUGIN_NAME = "opencode-greeter"');
+  expect(cli).not.toContain("{{");
 });
 
 test("scaffold strips scope in export name", () => {
@@ -57,6 +66,7 @@ test("scaffold strips scope in export name", () => {
   expect(idx).toContain("OpencodeGreeterPlugin");
   const pkg = JSON.parse(readFileSync(join(tmp, "package.json"), "utf-8"));
   expect(pkg.name).toBe("@acme/opencode-greeter");
+  expect(pkg.bin).toEqual({ "opencode-greeter": "src/cli.ts" });
 });
 
 test("scaffold rejects invalid names", () => {
