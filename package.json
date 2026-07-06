@@ -1,0 +1,44 @@
+{
+  "name": "octp",
+  "version": "1.0.0",
+  "description": "opencode plugin template — scaffold a new opencode plugin project via `npx octp init`",
+  "type": "module",
+  "bin": {
+    "octp": "./src/cli.ts"
+  },
+  "exports": "./src/index.ts",
+  "files": [
+    "src",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "bun-types": "^1.3.14",
+    "typescript": "latest"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "plugin",
+    "scaffold",
+    "template",
+    "boilerplate",
+    "starter",
+    "generator",
+    "create"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itzptk/octp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itzptk/octp/issues"
+  },
+  "homepage": "https://github.com/itzptk/octp#readme"
+}

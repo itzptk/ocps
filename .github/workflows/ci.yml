@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Test
+        run: bun test
+
+      - name: Scaffold smoke test
+        run: |
+          mkdir -p /tmp/smoke
+          bun run src/cli.ts init /tmp/smoke/opencode-demo --name opencode-demo --no-install
+          test -f /tmp/smoke/opencode-demo/src/index.ts
+          test -f /tmp/smoke/opencode-demo/package.json
+          grep -q '"opencode-demo"' /tmp/smoke/opencode-demo/package.json
