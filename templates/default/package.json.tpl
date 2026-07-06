@@ -9,6 +9,8 @@
     "{{binName}}": "src/cli.ts"
   },
   "files": [
+    "config.json",
+    "schema.json",
     "src",
     "README.md"
   ],
