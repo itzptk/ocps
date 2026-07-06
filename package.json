@@ -1,6 +1,6 @@
 {
   "name": "@itzptk/ocps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "opencode plugin starter — scaffold a new opencode plugin project via `npx ocps init`",
   "type": "module",
   "bin": {
