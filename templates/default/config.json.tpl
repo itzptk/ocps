@@ -1,0 +1,4 @@
+{
+  "$schema": "{{schemaUrl}}",
+  "enabled": true
+}

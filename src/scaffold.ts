@@ -68,6 +68,8 @@ export function scaffold(
 
   const vars: TemplateVars = {
     name: parsed.raw,
+    binName: parsed.local,
+    schemaUrl: `https://raw.githubusercontent.com/${parsed.scope ?? parsed.local}/${parsed.local}/main/schema.json`,
     exportName,
     description,
     year,

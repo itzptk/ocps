@@ -46,7 +46,11 @@ opencode-greeter/
   .gitignore
   README.md
   LICENSE
+  config.json      # default plugin config copied by the setup CLI
+  schema.json      # JSON Schema for config.json
   src/
+    cli.ts          # setup CLI for opencode.json
+    cli.test.ts     # setup CLI JSONC test
     index.ts        # plugin entry exporting the hook function
     index.test.ts   # initialization + hook test
   .github/workflows/
@@ -59,6 +63,10 @@ The generated `src/index.ts` exports a typed opencode plugin that:
 - logs to `client.app.log` on load,
 - subscribes to `session.idle` events,
 - and short-circuits when `enabled: false`.
+
+The generated package also exposes an `opencode-greeter` CLI that adds the plugin to `~/.config/opencode/opencode.json` and copies `config.json` to `~/.config/opencode/opencode-greeter.json` if it does not already exist.
+
+The generated `config.json` references `schema.json` with a raw GitHub URL. Scoped packages use the scope as the GitHub owner; unscoped packages assume the owner matches the package name.
 
 Register the published plugin in `opencode.json`:
 

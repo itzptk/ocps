@@ -5,13 +5,21 @@
   "type": "module",
   "main": "src/index.ts",
   "exports": "./src/index.ts",
+  "bin": {
+    "{{binName}}": "src/cli.ts"
+  },
   "files": [
+    "config.json",
+    "schema.json",
     "src",
     "README.md"
   ],
   "scripts": {
     "test": "bun test",
     "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
   },
   "peerDependencies": {
     "@opencode-ai/plugin": "*"
