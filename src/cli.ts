@@ -65,10 +65,10 @@ class CliError extends Error {}
 
 function printHelp(): void {
   const lines = [
-    "octp - scaffold a new opencode plugin",
+    "ocps - scaffold a new opencode plugin",
     "",
     "Usage:",
-    "  octp init [directory] --name <package-name> [options]",
+    "  ocps init [directory] --name <package-name> [options]",
     "",
     "Options:",
     "  --name <name>           npm package name for the plugin (required)",
@@ -79,8 +79,8 @@ function printHelp(): void {
     "  -h, --help              Show this help",
     "",
     "Examples:",
-    "  octp init my-plugin --name opencode-greeter",
-    "  octp init --name @scope/opencode-greeter",
+    "  ocps init my-plugin --name opencode-greeter",
+    "  ocps init --name @scope/opencode-greeter --author \"Jane Doe\"",
   ];
   process.stdout.write(lines.join("\n") + "\n");
 }

@@ -1,10 +1,10 @@
 {
-  "name": "octp",
+  "name": "ocps",
   "version": "1.0.0",
-  "description": "opencode plugin template — scaffold a new opencode plugin project via `npx octp init`",
+  "description": "opencode plugin starter — scaffold a new opencode plugin project via `npx ocps init`",
   "type": "module",
   "bin": {
-    "octp": "./src/cli.ts"
+    "ocps": "./src/cli.ts"
   },
   "exports": "./src/index.ts",
   "files": [
@@ -35,10 +35,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itzptk/octp.git"
+    "url": "git+https://github.com/itzptk/ocps.git"
   },
   "bugs": {
-    "url": "https://github.com/itzptk/octp/issues"
+    "url": "https://github.com/itzptk/ocps/issues"
   },
-  "homepage": "https://github.com/itzptk/octp#readme"
+  "homepage": "https://github.com/itzptk/ocps#readme"
 }

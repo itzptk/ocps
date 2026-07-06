@@ -1,20 +1,20 @@
-# octp
+# ocps
 
-[![npm version](https://img.shields.io/npm/v/octp.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/octp)
-[![npm downloads](https://img.shields.io/npm/dm/octp.svg?style=flat-square)](https://www.npmjs.com/package/octp)
-[![license](https://img.shields.io/github/license/itzptk/octp.svg?style=flat-square)](./LICENSE)
-[![CI](https://img.shields.io/github/actions/workflow/status/itzptk/octp/ci.yml?branch=main&label=ci&style=flat-square)](https://github.com/itzptk/octp/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/ocps.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/ocps)
+[![npm downloads](https://img.shields.io/npm/dm/ocps.svg?style=flat-square)](https://www.npmjs.com/package/ocps)
+[![license](https://img.shields.io/github/license/itzptk/ocps.svg?style=flat-square)](./LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/itzptk/ocps/ci.yml?branch=main&label=ci&style=flat-square)](https://github.com/itzptk/ocps/actions/workflows/ci.yml)
 [![Bun](https://img.shields.io/badge/powered%20by-bun-f9f1e1?style=flat-square&logo=bun)](https://bun.sh)
 [![opencode](https://img.shields.io/badge/opencode-plugin-0ea5e9?style=flat-square)](https://opencode.ai)
 
-> **octp** = **o**pencode **c**reate **t**emplate **p**lugin
+> **ocps** = **o**pencode **c**reate **p**lugin **s**tarter
 
 Scaffold a new [opencode](https://opencode.ai) plugin project with a single command. Generate a clean, typed, test-driven TypeScript plugin boilerplate — ready to develop, test, and publish to npm.
 
 ## Quickstart
 
 ```bash
-npx octp init my-plugin --name opencode-greeter
+npx ocps init my-plugin --name opencode-greeter
 ```
 
 This creates an `opencode-greeter/` directory with a working plugin, installs dependencies, and prints the next steps.
@@ -22,7 +22,7 @@ This creates an `opencode-greeter/` directory with a working plugin, installs de
 ## Usage
 
 ```text
-octp init [directory] --name <package-name> [options]
+ocps init [directory] --name <package-name> [options]
 
 Options:
   --name <name>           npm package name for the plugin (required)
@@ -33,8 +33,8 @@ Options:
   -h, --help              Show help
 
 Examples:
-  octp init my-plugin --name opencode-greeter
-  octp init --name @scope/opencode-greeter --author "Jane Doe"
+  ocps init my-plugin --name opencode-greeter
+  ocps init --name @scope/opencode-greeter --author "Jane Doe"
 ```
 
 ## What it creates
