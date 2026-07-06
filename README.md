@@ -1,7 +1,7 @@
 # ocps
 
-[![npm version](https://img.shields.io/npm/v/ocps.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/ocps)
-[![npm downloads](https://img.shields.io/npm/dm/ocps.svg?style=flat-square)](https://www.npmjs.com/package/ocps)
+[![npm version](https://img.shields.io/npm/v/@itzptk/ocps.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/@itzptk/ocps)
+[![npm downloads](https://img.shields.io/npm/dm/@itzptk/ocps.svg?style=flat-square)](https://www.npmjs.com/package/@itzptk/ocps)
 [![license](https://img.shields.io/github/license/itzptk/ocps.svg?style=flat-square)](./LICENSE)
 [![CI](https://img.shields.io/github/actions/workflow/status/itzptk/ocps/ci.yml?branch=main&label=ci&style=flat-square)](https://github.com/itzptk/ocps/actions/workflows/ci.yml)
 [![Bun](https://img.shields.io/badge/powered%20by-bun-f9f1e1?style=flat-square&logo=bun)](https://bun.sh)
@@ -14,7 +14,7 @@ Scaffold a new [opencode](https://opencode.ai) plugin project with a single comm
 ## Quickstart
 
 ```bash
-npx ocps init my-plugin --name opencode-greeter
+npx @itzptk/ocps init my-plugin --name opencode-greeter
 ```
 
 This creates an `opencode-greeter/` directory with a working plugin, installs dependencies, and prints the next steps.
