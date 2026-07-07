@@ -4,7 +4,7 @@
   "description": "opencode plugin starter — scaffold a new opencode plugin project via `npx ocps init`",
   "type": "module",
   "bin": {
-    "ocps": "./dist/cli.js"
+    "ocps": "dist/cli.js"
   },
   "publishConfig": {
     "access": "public"

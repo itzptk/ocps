@@ -1,6 +1,7 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -14,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Release Please
+        if: ${{ github.event_name == 'push' }}
         id: release
         uses: googleapis/release-please-action@v5
         with:
@@ -21,16 +23,26 @@ jobs:
           config-file: release-please-config.json
 
       - name: Checkout
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch' }}
         uses: actions/checkout@v5
 
       - name: Setup Node
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch' }}
         uses: actions/setup-node@v5
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org
 
+      - name: Setup Bun
+        if: ${{ steps.release.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch' }}
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        if: ${{ steps.release.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: bun install --frozen-lockfile
+
       - name: Publish to npm
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created == 'true' || github.event_name == 'workflow_dispatch' }}
         run: npm publish --access public --provenance
